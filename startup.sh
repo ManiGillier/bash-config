@@ -1,5 +1,5 @@
 
 # Startup lines
 
-# Emacs daemon launch
-((pgrep emacs > /dev/null 2> /dev/null || emacs --daemon 2> /dev/null)&)
+# Put english as main language
+export LANG=en_US.UTF-8
