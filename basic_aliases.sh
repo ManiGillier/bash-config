@@ -8,7 +8,19 @@ alias .....="cd ../../../.."
 # Simple aliases
 alias c="clear"
 
-# Asm alias
-alias test_asm='make re && gcc main.c -L. -lasm -fno-builtin && (./a.out > res_0 ; echo $?) ; gcc main.c && (./a.out > res_1 ; echo $?) ; echo "-- YOUR" ; cat res_0 ; echo "-- LIBC" ; cat res_1 ; echo "-- DIFF" ; diff -d --color=auto res_0 res_1 ; rm -f res_0 res_1 ; gcc main.c -L. -lasm -fno-builtin'
+# Cybersec aliases
+alias john="/usr/share/john/run/john"
+alias pls_hack="sudo openvpn /home/mani/cyber/pistone.ovpn"
 
-alias aer_global="check"
+function cyber-set-ip {
+    read -p "Ip: " ip
+    cp /etc/hosts-base /tmp/hosts
+    echo -e "\n# Cyber ip address: " >> /tmp/hosts
+    echo $ip "cyber" >> /tmp/hosts
+    sudo cp /tmp/hosts /etc/hosts
+}
+alias clipboard='xclip -sel clip'
+
+alias epiclang="clang"
+
+alias get-idf=". $HOME/.espressif/v5.5.3/esp-idf/export.sh"
